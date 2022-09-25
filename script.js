@@ -1,10 +1,10 @@
 const todaysDate = document.querySelector('.today');
-todaysDate.value = '09/24/2022';
-let pastDue = 0;
-let dueToday = 0;
-let future = 0;
+let pastDue, dueToday, future;
 
 document.querySelector('.count').addEventListener('click', () => {
+    pastDue = 0;
+    dueToday = 0;
+    future = 0;
     const input = document.querySelector('.content').value;
     const dates = input.match(/\d+[/]\d+[/]\d+/g).sort((a, b) => Date.parse(a) - Date.parse(b));
     let counts = {};
@@ -17,7 +17,6 @@ document.querySelector('.count').addEventListener('click', () => {
     });
 
     console.log('Past Due: ' + pastDue + '\n' + 'Today: ' + dueToday + '\n' + 'Future: ' + future);
-    console.log(Date.parse('08/26/2022') > Date.parse('09/24/2022'))
 })
 
 /* In-Hand Date: 09/25/2022 asfsflkja asdlfkjasdflkjas alkdfj 23409823409
