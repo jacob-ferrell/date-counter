@@ -6,7 +6,9 @@ document.querySelector('.count').addEventListener('click', () => {
     dueToday = 0;
     future = 0;
     const input = document.querySelector('.content').value;
-    const dates = input.match(/\d+[/]\d+[/]\d+/g).sort((a, b) => Date.parse(a) - Date.parse(b));
+    let noInHand = (input.match(/In-Hand\sDate\:\sUnpack/g) || []).length;
+    let dates = (input.match(/\d+[/]\d+[/]\d+/g) || [])
+        .sort((a, b) => Date.parse(a) - Date.parse(b));
     let counts = {};
     const todayParsed = Date.parse(todaysDate.value);
     dates.forEach(date => {
@@ -15,8 +17,10 @@ document.querySelector('.count').addEventListener('click', () => {
         else if (todayParsed > parsed) pastDue++;
         else if (todayParsed < parsed) future++;
     });
+    
+    
 
-    console.log('Past Due: ' + pastDue + '\n' + 'Today: ' + dueToday + '\n' + 'Future: ' + future);
+    console.log('Past Due: ' + pastDue + '\n' + 'Today: ' + dueToday + '\n' + 'Future: ' + future + "\n" + 'No In-Hand Date: ' + noInHand);
 })
 
 /* In-Hand Date: 09/25/2022 asfsflkja asdlfkjasdflkjas alkdfj 23409823409
