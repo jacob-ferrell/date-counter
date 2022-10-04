@@ -7,6 +7,7 @@ document.querySelector('.count').addEventListener('click', () => {
     future = 0;
     const input = document.querySelector('.content').value;
     let noInHand = (input.match(/In-Hand\sDate\:\sUnpack/g) || []).length;
+    let updateReq = (input.match(/Shipment\sUpdate\sRequired/g) || []).length;
     let dates = (input.match(/\d+[/]\d+[/]\d+/g) || [])
         .sort((a, b) => Date.parse(a) - Date.parse(b));
     let counts = {};
@@ -20,7 +21,11 @@ document.querySelector('.count').addEventListener('click', () => {
     
     
 
-    console.log('Past Due: ' + pastDue + '\n' + 'Today: ' + dueToday + '\n' + 'Future: ' + future + "\n" + 'No In-Hand Date: ' + noInHand);
+    console.log('Past Due: ' + pastDue + '\n' 
+    + 'Today: ' + dueToday + '\n' 
+    + 'Future: ' + future + "\n" 
+    + 'No In-Hand Date: ' + noInHand + '\n'
+    + 'Update Required: ' + updateReq);
 })
 
 /* In-Hand Date: 09/25/2022 asfsflkja asdlfkjasdflkjas alkdfj 23409823409
