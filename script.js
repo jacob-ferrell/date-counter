@@ -14,7 +14,7 @@ document.querySelector('.count').addEventListener('click', () => {
 })
 
 function getStore() {
-    let match = (input.match(/Welcome.+FL$/)[0] || '');
+    let match = (input.match(/Welcome.+FL/)[0] || '');
     document.querySelector('.store')
         .textContent = 'Store: ' + match.substr(match.indexOf('|') + 2)
 }
@@ -62,7 +62,7 @@ function count() {
     + 'Update Required: ' + updateReq);
 }
 
-/* In-Hand Date: 09/25/2022 asfsflkja asdlfkjasdflkjas alkdfj 23409823409
+/* Welcome Michael Ferrell | BOCA RATON FL In-Hand Date: 09/25/2022 asfsflkja asdlfkjasdflkjas alkdfj 23409823409
 In-Hand Date: 09/29/2022 asfsflkja asdlfkjasdflkjas alkdfj 23409823409
 In-Hand Date: 09/25/2022 asfsflkja asdlfkjasdflkjas alkdfj 23409823409
 In-Hand Date: 09/24/2022 asfsflkja asdlfkjasdflkjas alkdfj 23409823409
@@ -74,5 +74,5 @@ In-Hand Date: 09/24/2022 asfsflkja asdlfkjasdflkjas alkdfj 23409823409
 In-Hand Date: 09/21/2022 asfsflkja asdlfkjasdflkjas alkdfj 23409823409
 In-Hand Date: 09/20/2022 asfsflkja asdlfkjasdflkjas alkdfj 23409823409
 In-Hand Date: 09/25/2022 asfsflkja asdlfkjasdflkjas alkdfj 23409823409 
-Welcome Michael Ferrell | BOCA RATON FL
+
 */
