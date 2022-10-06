@@ -1,15 +1,34 @@
 
 .content-container {
-    margin-top: 20px;
 }
+
 .counts-container {
-    margin-top: 30px;
+    margin-top: 10px;
+    display: flex;
+    gap: 100px;
 }
+
 .todays-date {
-    margin-bottom: 20px;
 }
+
 .heading {
     display: flex;
     gap: 100px;
-    margin-top: 20px;
+}
+
+table, td {
+    border: 1px solid;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.duplicates-template {
+    display: none;
 }

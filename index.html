@@ -10,23 +10,55 @@
 </head>
 <body>
 
-    <div class="content-container">
-        <input type="text" class="content" placeholder="Paste Content Here">
-        <button class="count">Count</button>
-
-    </div>
+    
     <div class="heading">
-        <div class="store">Store: </div>
-        <div class="todays-date">Today's Date: </div>
+        <div class="content-container">
+            <input type="text" class="content" placeholder="Paste Content Here">
+            <button class="count">Count</button>
+        </div>
+        <div class="store"></div>
+        <div class="todays-date"></div>
     </div>
     <div class="counts-container">
-        
-        
-        <div class="past-due">Past Due: </div>
-        <div class="due-today">Today: </div>
-        <div class="future">Future: </div>
-        <div class="no-in-hand-date">No In-Hand Date: </div>
-        <div class="update-required">Update Required: </div>
+        <div class="packages">
+            <div class="past-due">Past Due: </div>
+            <div class="due-today">Today: </div>
+            <div class="future">Future: </div>
+            <div class="no-in-hand-date">No In-Hand Date: </div>
+            <div class="update-required">Update Required: </div>
+        </div>
+        <div class="duplicates-container">
+            
+        </div>
     </div>
+    <table>
+        <tr>
+            <td>Past Due</td>
+            <td id="past-due">0</td>
+        </tr>
+        <tr>
+            <td>Today</td>
+            <td id="today"></td>
+        </tr>
+        <tr>
+            <td>Future</td>
+            <td id="future"></td>
+        </tr>
+        <tr>
+            <td>No In-Hand Date</td>
+            <td id="no-in-hand"></td>
+        </tr>
+        <tr>
+            <td>Update Required</td>
+            <td id="update-required"></td>
+        </tr>
+    
+    </table>
+    <table class="duplicates-template">
+        <tr>
+            <td>Order #</td>
+            <td>Count</td>
+        </tr>
+    </table>
 </body>
 </html>
