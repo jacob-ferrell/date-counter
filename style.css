@@ -16,8 +16,14 @@
     gap: 100px;
 }
 
-table, td {
+table, td, th {
     border: 1px solid;
+    text-align: center;
+}
+
+th {
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 table {
