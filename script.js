@@ -11,15 +11,15 @@ document.querySelector('.count').addEventListener('click', () => {
     count();
     getStore();
     getDuplicates();
+    clipForBackroom();
 
 })
 
 function getStore() {
-    let match = (input.match(/Welcome.+FL/)[0] || '');
-    document.querySelector('.store')
-        .textContent = 
-            match.slice(match.indexOf('|') + 2, 
-            match.indexOf(' FL'));
+    const store = document.querySelector('.store');
+    store.textContent = '';
+    let match = input.slice(input.indexOf('|') + 2, input.indexOf(' FL'));
+    store.textContent = match;
 }
 
 function getDate() {
@@ -97,6 +97,14 @@ function createTable(duplicates) {
         table.appendChild(row);
     })
     container.appendChild(table);
+}
+
+function clipForBackroom() {
+    if (/^Staging\sLocation.+In[-]Hand\sDate\:\s(\d+[/]\d+[/]\d+)?$/.test(input)) {
+        return;
+    }
+    input = input.slice(input.indexOf('Staging Location'), input.lastIndexOf('Unpack') - 1);
+    navigator.clipboard.writeText(input);
 }
 
 /* Welcome Michael Ferrell | BOCA RATON FL In-Hand Date: 09/25/2022 asfsflkja asdlfkjasdflkjas alkdfj 23409823409
